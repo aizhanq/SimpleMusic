@@ -55,6 +55,7 @@
             // btnSelectSong
             // 
             this.btnSelectSong.BackColor = System.Drawing.Color.Sienna;
+            this.btnSelectSong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectSong.Font = new System.Drawing.Font("Muller Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectSong.ForeColor = System.Drawing.Color.White;
@@ -88,6 +89,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(764, 3);
             this.pictureBox1.Name = "pictureBox1";
