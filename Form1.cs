@@ -45,6 +45,12 @@ namespace MusicPlayerApp
             }
         }
 
+        private void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Code to play music
+            axWindowsMediaPlayerMusic.URL = paths[listBoxSongs.SelectedIndex];
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // Code to close the app

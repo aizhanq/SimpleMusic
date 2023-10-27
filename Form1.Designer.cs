@@ -50,6 +50,7 @@
             this.listBoxSongs.Name = "listBoxSongs";
             this.listBoxSongs.Size = new System.Drawing.Size(220, 276);
             this.listBoxSongs.TabIndex = 1;
+            this.listBoxSongs.SelectedIndexChanged += new System.EventHandler(this.listBoxSongs_SelectedIndexChanged);
             // 
             // btnSelectSong
             // 
