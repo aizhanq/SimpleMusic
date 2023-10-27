@@ -61,8 +61,9 @@
             this.btnSelectSong.Name = "btnSelectSong";
             this.btnSelectSong.Size = new System.Drawing.Size(220, 46);
             this.btnSelectSong.TabIndex = 2;
-            this.btnSelectSong.Text = "Select song";
+            this.btnSelectSong.Text = "Select songs";
             this.btnSelectSong.UseVisualStyleBackColor = false;
+            this.btnSelectSong.Click += new System.EventHandler(this.btnSelectSong_Click);
             // 
             // lblFooter
             // 

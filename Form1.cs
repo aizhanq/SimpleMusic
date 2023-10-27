@@ -22,9 +22,33 @@ namespace MusicPlayerApp
 
         }
 
+        // Create Global Variables of String Type Array ro save the titles or name of the tracks and path of the track
+        string[] paths, files;
+
+        private void btnSelectSong_Click(object sender, EventArgs e)
+        {
+            // Code to select songs
+            OpenFileDialog ofd = new OpenFileDialog();
+            // Code to select multiple files
+            ofd.Multiselect = true;
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                files = ofd.SafeFileNames; // Save the names of the track in files array
+                paths = ofd.FileNames; // Save the path of the track in path array
+
+                // Display the music titles in listbox
+                for (int i = 0; i < files.Length; i++)
+                {
+                    listBoxSongs.Items.Add(files[i]); 
+                }
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Code to close the app
+            this.Close();
         }
     }
 }
