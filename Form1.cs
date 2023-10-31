@@ -9,6 +9,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MusicPlayerApp
 {
@@ -78,8 +79,15 @@ namespace MusicPlayerApp
 
         private void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxSongs.SelectedIndex == -1) return;
+
+            using (DbEntities db = new DbEntities())
+            {
+                var name = listBoxSongs.SelectedItem.ToString();
+                model = db.Musics.Where(x => x.Name == name).FirstOrDefault();
+            }
             // Code to play music
-            //axWindowsMediaPlayerMusic.URL = paths[listBoxSongs.SelectedIndex];
+            axWindowsMediaPlayerMusic.URL = model.Path;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -99,7 +107,8 @@ namespace MusicPlayerApp
                 db.Musics.Remove(model);
                 db.SaveChanges(); 
             }
-            listBoxSongs.Items.Remove(model.Name);         
+            listBoxSongs.Items.Remove(model.Name);
+            axWindowsMediaPlayerMusic.Ctlcontrols.stop();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
