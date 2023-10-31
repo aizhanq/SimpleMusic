@@ -50,14 +50,18 @@ namespace MusicPlayerApp
             ofd.Multiselect = true;
 
             if (ofd.ShowDialog() == DialogResult.OK)
-            {  
+            {
+                
                 files = ofd.SafeFileNames; // Save the names of the track in files array
                 paths = ofd.FileNames; // Save the path of the track in path array
 
                 for (int i = 0; i < files.Length; i++)
                 {
+                    // Skip if the song already added
                     if (listBoxSongs.Items.Contains(files[i])) continue;
+                    if(!files[i].ToLower().EndsWith(".mp3")) continue;
 
+                    // Add the song to db
                     model.Name = files[i];
                     model.Path = paths[i];
                     using (DbEntities db = new DbEntities())
@@ -65,6 +69,8 @@ namespace MusicPlayerApp
                         db.Musics.Add(model);
                         db.SaveChanges();
                     }
+
+                    // Add the song to listBoxSong
                     listBoxSongs.Items.Add(files[i]);
                 } 
             }
