@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayerMusic = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerMusic)).BeginInit();
@@ -61,7 +62,7 @@
             this.btnSelectSong.ForeColor = System.Drawing.Color.White;
             this.btnSelectSong.Location = new System.Drawing.Point(555, 349);
             this.btnSelectSong.Name = "btnSelectSong";
-            this.btnSelectSong.Size = new System.Drawing.Size(220, 46);
+            this.btnSelectSong.Size = new System.Drawing.Size(133, 46);
             this.btnSelectSong.TabIndex = 2;
             this.btnSelectSong.Text = "Select songs";
             this.btnSelectSong.UseVisualStyleBackColor = false;
@@ -120,12 +121,26 @@
             this.axWindowsMediaPlayerMusic.Size = new System.Drawing.Size(524, 333);
             this.axWindowsMediaPlayerMusic.TabIndex = 3;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Brown;
+            this.btnDelete.Font = new System.Drawing.Font("Muller Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(695, 349);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 42);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // MusicPlayerApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 430);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblFooter);
             this.Controls.Add(this.axWindowsMediaPlayerMusic);
             this.Controls.Add(this.btnSelectSong);
@@ -135,6 +150,7 @@
             this.Name = "MusicPlayerApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player App";
+            this.Load += new System.EventHandler(this.MusicPlayerApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
@@ -152,6 +168,7 @@
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
